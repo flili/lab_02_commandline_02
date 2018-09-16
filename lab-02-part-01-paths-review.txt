@@ -20,7 +20,7 @@ cd /Users/
 ==========
 2. Write the command that you would use to change to your home directory.
 ----------
-
+cd
 
 
 ==========
