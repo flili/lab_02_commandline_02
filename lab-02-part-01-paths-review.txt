@@ -26,69 +26,95 @@ cd
 ==========
 3. Write the command that you would use to change to your Desktop folder.
 ----------
-cd Desktop
+cd /Desktop
 
 
 ==========
 4. What's the absolute path to your home directory?
 ----------
-/Users/student
+/Users/Guest
 
 
 ==========
 5. What's the absolute path to your Desktop directory?
 ----------
 
-/Users/student/Desktop
+/Users/Guest/Desktop
 
 ==========
 6. What's the absolute path to your Desktop directory?
 ----------
 
-../../Desktop
+$ ../../Desktop
 
 ==========
 7. If you're in your home directory, what's the relative path to your Desktop directory?
 ----------
+
+$ cd Destop/
 
 
 ==========
 8. If you're in your home directory, how would you create a new directory on your desktop called stuff without changing your directory?  Write your command below.
 ----------
 
+$ mkdir Desktop/stuff
 
 
 ==========
 9. If you're in your root directory, how would you create a new directory on your desktop called more-stuff without changing your directory?  Write your command below.
 ----------
 
+$ mkdir Users/Guest/Desktop/more-stuff
 
 
 ==========
 10. If you're in your Desktop directory, how would you create a new directory on your desktop called even-more-stuff?  Write your command below.
 ----------
 
+$ mkdir even-more-stuff
 
 
 ==========
 11. If you're in your home directory, how would you change to the directory right above it using a relative path (it should bring you to /Users)?  Write your command below.
 ----------
 
+MacBook:~ Guest$ cd /Users/
+MacBook:Users Guest$ 
+(it will take me to the Users folder)
 
 
 ==========
 12. If you're in your Desktop directory, how would you change to two directories right above it (again, this should be /Users) using a relative path?  Write your command below.
 ----------
 
-
+MacBook:Desktop Guest$ cd ../../
+MacBook:Users Guest$ pwd
+/Users
 
 ==========
 13. What's the shortcut for changing to the directory that you were just previously in?  For example, if I were in /Volumes... and I changed to /Users/profesor/Desktop, what's a quick way of changing to /Volumes without writing something like cd /Volumes?
 ----------
 
+$cd -
+
+
 ==========
 14. How would you show all of the files (including hidden ones) with detailed (long) information that are on you're Desktop if you're in your home directory?  Write your command below.
 ----------
+
+MacBook:Users Guest$ ls -atl cd Guest/Desktop/
+ls: cd: No such file or directory
+Guest/Desktop/:
+total 16
+drwxr-xr-x+ 17 Guest  _guest   544 Sep 16 18:18 ..
+-rw-r--r--@  1 Guest  _guest  6148 Sep 16 18:16 .DS_Store
+drwx------+  8 Guest  _guest   256 Sep 16 18:16 .
+drwxr-xr-x   2 Guest  _guest    64 Sep 16 18:16 even-more-stuff
+drwxr-xr-x   2 Guest  _guest    64 Sep 16 18:14 more-stuff
+drwxr-xr-x   2 Guest  _guest    64 Sep 16 18:08 stuff1
+drwxr-xr-x   2 Guest  _guest    64 Sep 16 18:07 stuff
+-rw-r--r--   1 Guest  _guest     0 Sep 16 17:49 .localized
 
 ==========
 Optional Challenge:
@@ -101,3 +127,27 @@ e. Determine which folder in my-stuff was created most recently by using ls.  (t
 f. Remove that folder.
 g. Show all of the commands that you used to complete the above exercise.  (for example, how did you determine which folder in my-stuff was the most recent?).  Use the command: history ... to help you remember what you did!  Paste the commands below.
 ----------
+
+
+//Answer
+
+MacBook:~ Guest$ pwd
+/Users/Guest
+MacBook:~ Guest$ mkdir -p Desktop/my-stuff/archived
+MacBook:~ Guest$ mkdir Desktop/my-stuff/current
+MacBook:~ Guest$ mkdir Desktop/my-stuff/MacBook
+MacBook:~ Guest$ pwd
+/Users/Guest
+MacBook:~ Guest$ cd Desktop/my-stuff/
+MacBook:my-stuff Guest$ pwd
+/Users/Guest/Desktop/my-stuff
+MacBook:my-stuff Guest$ ls -l
+total 0
+drwxr-xr-x  2 Guest  _guest  64 Sep 16 19:04 MacBook
+drwxr-xr-x  2 Guest  _guest  64 Sep 16 19:04 archived
+drwxr-xr-x  2 Guest  _guest  64 Sep 16 19:04 current
+MacBook:my-stuff Guest$ rmdir MacBook/
+MacBook:my-stuff Guest$ 
+MacBook:my-stuff Guest$ ls
+archived	current
+MacBook:my-stuff Guest$ 
