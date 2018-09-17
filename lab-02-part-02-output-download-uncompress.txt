@@ -151,6 +151,7 @@ MacBook:~ Guest$ pwd
 ==========
 13. So... the lab materials are located at this url:
 
+http://foureyes.github.io/mtec1002-spring2014/labs/02/mtec1002-lab-02.zip
 
 Download the file using curl... to a file called mtec1002-lab-02.zip using the commandline.  
 
