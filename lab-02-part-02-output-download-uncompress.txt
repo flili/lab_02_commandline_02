@@ -19,6 +19,8 @@ $ echo hello
 Copy and paste the output below.
 ----------
 
+MacBook:~ Guest$ echo hello
+hello
 
 
 ==========
@@ -28,7 +30,8 @@ $ echo hello there
 
 Copy and paste the output below.
 ----------
-
+MacBook:~ Guest$ echo hello there
+hello there
 
 
 ==========
@@ -38,6 +41,8 @@ $ echo good mornin'
 
 Copy and paste the output below.
 ----------
+MacBook:~ Guest$ echo good mornin'
+> 
 
 
 
@@ -56,6 +61,8 @@ $ echo "good mornin'"
 
 Copy and paste the output below.
 ----------
+MacBook:~ Guest$ echo "good mornin'"
+good mornin'
 
 
 
@@ -66,6 +73,8 @@ $ echo *
 
 What happens?
 ----------
+MacBook:~ Guest$ echo *
+Applications Desktop Documents Downloads Library Movies Music Pictures Public
 
 
 
@@ -74,7 +83,7 @@ What happens?
 
 Write the command that you used below:
 ----------
-
+Macbook:~ Guest$ clear
 
 
 ==========
@@ -87,6 +96,13 @@ $ curl google.com
 
 Copy and paste the output below.
 ----------
+MacBook:~ Guest$ curl google.com
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
 
 
 
@@ -97,7 +113,8 @@ $ curl www.google.com
 
 Copy and paste the output below, but not the whole thing!  Just copy up to the part that has the title tags (<title>......</title>).
 ----------
-
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE>
 
 
 ==========
@@ -106,6 +123,10 @@ Copy and paste the output below, but not the whole thing!  Just copy up to the p
 Write the command you used below.  Also copy and paste the output below.
 ----------
 
+~ Guest$ curl -o google.txt https://www.google.com/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 12134    0 12134    0     0  27022      0 --:--:-- --:--:-- --:--:-- 27084
 
 
 ==========
@@ -113,7 +134,8 @@ Write the command you used below.  Also copy and paste the output below.
 
 Write the command you used to determine your directory.  Also, copy and paste the output below.
 ----------
-
+MacBook:Desktop Guest$ pwd
+/Users/Guest/Desktop
 
 
 ==========
@@ -121,13 +143,14 @@ Write the command you used to determine your directory.  Also, copy and paste th
 
 Write the command that you used to change to your home directory.  If you were already in your home directory, write the command that you *would* have used to change to it!
 ----------
-
+MacBook:Desktop Guest$ cd ~/
+MacBook:~ Guest$ pwd
+/Users/Guest
 
 
 ==========
 13. So... the lab materials are located at this url:
 
-http://foureyes.github.io/mtec1002-spring2014/labs/02/mtec1002-lab-02.zip
 
 Download the file using curl... to a file called mtec1002-lab-02.zip using the commandline.  
 
@@ -139,13 +162,25 @@ Write down the command that you used to download the file below.  Additionally, 
 ----------
 
 
+MacBook:~ Guest$ curl -o mtec1002-lab-02.zip  http://foureyes.github.io/mtec1002-spring2014/labs/02/mtec1002-lab-02.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   178  100   178    0     0    804      0 --:--:-- --:--:-- --:--:--   805
+MacBook:~ Guest$ ls
+Applications		Library			Public
+Desktop			Movies			google.txt
+Documents		Music			mtec1002-lab-02.zip
+Downloads		Pictures
+uMacBook:~ Guest$
+
+
 
 ==========
 14. We learned a command to uncompress a .zip file.  Use it to extract the files and folders from the file you just downloaded.
 
 Write down the command that you used to uncompress the file.
 ----------
-
+$unzip mtec1002-lab-02.zip
 
 
 ==========
