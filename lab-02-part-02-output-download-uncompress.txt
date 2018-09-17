@@ -189,7 +189,9 @@ $unzip mtec1002-lab-02.zip
 
 Copy and paste the output below.
 ----------
-
+MacBook:~ Guest$ cd mtec1002-lab-02
+MacBook:mtec1002-lab-02 Guest$ ls
+books	logs	web
 
 
 ==========
@@ -200,6 +202,14 @@ We're going to mess around with archiving and compressing files.  We'll make a d
 
 Copy and paste the output below.
 ----------
+MacBook:mtec1002-lab-02 Guest$ cd ../
+MacBook:~ Guest$ mkdir stuff
+MacBook:~ Guest$ ls
+Applications		Movies			google.txt
+Desktop			Music			mtec1002-lab-02
+Documents		Pictures		mtec1002-lab-02.zip
+Downloads		Public			stuff
+Library			__MACOSX		
 
 
 
@@ -212,7 +222,8 @@ List the files in the directory you're currently in (which should be stuff).
 
 Copy and paste the output below.
 ----------
-
+MacBook:stuff Guest$ ls
+hello.txt
 
 
 ==========
@@ -225,6 +236,17 @@ List the files in the directory you're currently in (which should be home).
 Copy and paste the output below.
 ----------
 
+MacBook:stuff Guest$ cd ~/
+MacBook:~ Guest$ tar -cvf stuff.tar stuff
+a stuff
+a stuff/hello.txt
+MacBook:~ Guest$ ls
+Applications		Music			mtec1002-lab-02.zip
+Desktop			Pictures		stuff
+Documents		Public			stuff.tar
+Downloads		__MACOSX		
+Library			google.txt
+Movies			mtec1002-lab-02
 
 
 ==========
@@ -234,7 +256,15 @@ $ tar -cvf stuff.tar stuff
 
 Copy and paste the output below.
 ----------
-
+MacBook:~ Guest$  tar -cvf stuff.tar stuff
+a stuff
+a stuff/hello.txt
+MacBook:~ Guest$ ls
+Applications		Movies			google.txt
+Desktop			Music			mtec1002-lab-02
+Documents		Pictures		mtec1002-lab-02.zip
+Downloads		Public			stuff
+Library			__MACOSX		stuff.tar
 
 
 ==========
@@ -242,7 +272,12 @@ Copy and paste the output below.
 
 Copy and paste the output below. (It should contain stuff.tar)
 ----------
-
+MacBook:~ Guest$ ls
+Applications		Movies			google.txt
+Desktop			Music			mtec1002-lab-02
+Documents		Pictures		mtec1002-lab-02.zip
+Downloads		Public			stuff
+Library			__MACOSX		stuff.tar
 
 
 ==========
@@ -252,7 +287,13 @@ gzip stuff.tar
 
 List your files again.... you should have a new file with a .gz extension.  Copy and paste the output of your this below.
 ----------
-
+MacBook:~ Guest$ gzip stuff.tar
+MacBook:~ Guest$ ls
+Applications		Movies			google.txt
+Desktop			Music			mtec1002-lab-02
+Documents		Pictures		mtec1002-lab-02.zip
+Downloads		Public			stuff
+Library			__MACOSX		stuff.tar.gz
 
 
 ==========
@@ -266,7 +307,17 @@ Change your directory to mtec1002-lab-02.
 
 List the files.  Copy and paste the output below (stuff.tar.gz should be there).
 ----------
-
+MacBook:~ Guest$ mv stuff.tar.gz mtec1002-lab-02
+MacBook:~ Guest$ ls
+Applications		Movies			google.txt
+Desktop			Music			mtec1002-lab-02
+Documents		Pictures		mtec1002-lab-02.zip
+Downloads		Public			stuff
+Library			__MACOSX
+MacBook:~ Guest$ cd mtec1002-lab-02
+MacBook:mtec1002-lab-02 Guest$ ls
+books		logs		stuff.tar.gz	web
+MeiQis-MacBook:mtec1002-lab-02 Guest$ 
 
 ==========
 23. You should be in the lab directory.  Let's uncompress the file.
@@ -275,7 +326,12 @@ $ tar -xvf stuff.tar.gz
 
 List the files.  Copy and paste the output below (the folder, stuff, should be there).
 ----------
-
+MacBook:mtec1002-lab-02 Guest$ tar -xvf stuff.tar.gz
+x stuff/
+x stuff/hello.txt
+MacBook:mtec1002-lab-02 Guest$ ls
+books		logs		stuff		stuff.tar.gz	web
+MacBook:mtec1002-lab-02 Guest$ 
 
 
 ==========
@@ -294,7 +350,24 @@ REMEMBER to use the -o flag and specifiy a filenmae that ends in .tar.gz
 
 Write out the commands that you used to do this.
 ----------
-
+MacBook:~ Guest$ curl http://foureyes.github.io/mtec1002/labs/02/secret.tar.gz
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+MacBook:~ Guest$ curl -o file-lab-02.tar.gz http://foureyes.github.io/mtec1002/labs/02/secret.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   178  100   178    0     0    462      0 --:--:-- --:--:-- --:--:--   463
+MacBook:~ Guest$ ls
+Applications		Movies			file-lab-02.tar.gz
+Desktop			Music			google.txt
+Documents		Pictures		mtec1002-lab-02
+Downloads		Public			mtec1002-lab-02.zip
+Library			__MACOSX		stuff
 
 
 ==========
